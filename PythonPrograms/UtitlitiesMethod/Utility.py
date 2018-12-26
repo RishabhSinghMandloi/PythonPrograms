@@ -72,12 +72,12 @@ def checkPrime(n):
 
     return True
 
-
+##*****************PrimeFactor******************************##
 def primeFactor(n):
     for x in range(2,n):
         if(checkPrime(x) and n%x==0):
             print(x)
-
+##************************ Gambler ****************************##
 def gambler(stack , goal , bet):
     loss = 0
     win = 0
@@ -96,8 +96,7 @@ def gambler(stack , goal , bet):
     return  win
 
 
-
-
+##***********************
 
 def calulatePercentage(win,loss,turns):
     winPercent = (win/turns)*100
@@ -106,7 +105,7 @@ def calulatePercentage(win,loss,turns):
     print("WinPercentage ",winPercent)
     print("LossPercentage ",lossPercent)
 
-
+##***************************** Coupans *********************************##
 def coupans(list):
     count = 0
     while(len(list) > 0):
@@ -118,7 +117,7 @@ def coupans(list):
 
     print("Total random number needed to have all distinct copuans ",count)
 
-
+##****************************** TwoDimensional Array *************************##
 def twoDimensionalArray(x,y):
     arr= [[0 for i in range(x)]for j in range(y)]
 
@@ -146,6 +145,7 @@ def findTriplet(arr):
         print("Triplet does not exist")
 
 
+##********************************** StopWatch *************************************************##
 
 def start():
     start.startTimer = time.time()
@@ -161,6 +161,119 @@ def elapsedTime():
     elapsed = stop.stopTimer - start.startTimer
     print()
     print("ElapsedTime :",elapsed)
-    print("Coverting Milliseconds to Seconds ",(elapsed/1000)," sec")
+
+
+
+##*****************************Distance*************************##
+
+def distanceCalculation(x,y):
+    distance = math.sqrt((x*x) + (y*y))
+    print("Distance from origin is ",distance)
+
+##******************************* Permutations of all Strings ***********************##
+
+def permutation(list):
+    if len(list) == 0:
+        return []
+    elif len(list) == 1:
+        return [list]
+    else:
+        l = []
+        for i in range(len(list)):
+            x =list[i]
+            xs = list[:i] + list[i+1:]
+            for p in permutation(xs):
+                l.append([x] + p)
+                return l
+
+##********************************* Quadratic Equation *******************************##
+
+def quadraticFunctions(a,b,c):
+
+    print("Given quadratic equation is:" ,a,"x^2 +",b,"x + ",c)
+    d = (b*b) - (4*a*c)
+    if(d > 0):
+        print("Roots are real and unequal")
+        root1 = (-b + math.sqrt(d))/(2*a)
+        root2 = (-b-math.sqrt(d))/(2*a)
+        print("First Root ",root1)
+        print("Second Root " ,root2)
+
+    elif(d==0):
+        print("Roots are real and equal")
+        root1 = (-b+math.sqrt(d))/(2*a)
+        print("First Root ",root1)
+
+    else:
+        print("Root are imaginary")
+
+##******************************* Windchill *******************************************************##
+
+def windChill(temprature,windspeed):
+    if(temprature < 50 and (windspeed > 3 and windspeed < 120)):
+        windChill = 35.74 + 0.6215 * temprature + (0.4275*temprature - 35.75)*math.pow(windspeed,0.16)
+        print()
+        print("WindChill is ",windChill)
+    else:
+        print("Enter valid input")
+
+##**************************************** Anagram ********************************##
+
+def isAnagram(str1,str2):
+    word1 = str1
+    l1=list(word1)
+    word2 = str2
+    l2 = list(word2)
+    if(sorted(l1)==sorted(l2)):
+        print("Strings are Anagram")
+    else:
+        print("String are not a Anagram")
+
+def isPalindrome(n):
+    m = n
+    sum = 0
+    while(n!=0):
+        r = n%10
+        sum = sum*10 + r
+        n = n/10
+    if(sum == m):
+        return True
+    return False
+
+
+def inputIntegerList():
+    n= int(input("Enter no of Elements :"))
+    print("Enter elements")
+    listArr = [input() for i in range(n)]
+    return listArr
+
+def inputStringList():
+    n=(input("Enter no of elements :"))
+    print("Enter Strings :")
+    listArr = [input() for i in range(n)]
+    return listArr
+
+def binarySearch(listArr,low,high,element):
+    if(low>high):
+        return -1
+    mid = (low+high)//2
+    if(listArr[mid]==element):
+        return element
+    if(element < mid):
+        return binarySearch(listArr,low,mid-1,element)
+    else:
+        return binarySearch(listArr,mid+1,high,element)
+
+
+def insertionSort(arr):
+    n=len(arr)
+    for x in range (1,n):
+        key = arr[x]
+        j = x - 1
+        while(j>=0 and arr[j] > key):
+            arr[j+1] = arr[j]
+            j = j - 1
+        arr[j+1] = key
+    return arr
 
 
