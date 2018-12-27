@@ -1,3 +1,11 @@
+# @Purpose To find the elapsed time between start and stop
+# @aurthor Rishabh Singh
+# @version  3.7
+# @since 26/12/2018
+
+
+
+
 from UtitlitiesMethod import Utility
 
 try:

@@ -1,3 +1,8 @@
+# @Purpose Here we find the count of Random Number to find the distnict coupans
+# @aurthor Rishabh Singh
+# @version  3.7
+# @since 26/12/2018
+
 from UtitlitiesMethod import  Utility
 
 try :

@@ -1,3 +1,10 @@
+# @Purpose To print the powers of 2
+# @aurthor Rishabh Singh
+# @version  3.7
+# @since 26/12/2018
+
+
+
 from UtitlitiesMethod import Utility
 try :
     number = int(input("Enter the Number \n"))

@@ -1,3 +1,10 @@
+# @Purpose To find the percentage of number of  wins and loss
+# @aurthor Rishabh Singh
+# @version  3.7
+# @since 26/12/2018
+
+
+
 from UtitlitiesMethod import  Utility
 
 name = input("Enter your name gambler\n")

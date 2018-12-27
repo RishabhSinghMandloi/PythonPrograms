@@ -1,3 +1,10 @@
+# @Purpose To find the sum of the nth harmonic number
+# @aurthor Rishabh Singh
+# @version  3.7
+# @since 26/12/2018
+
+
+
 try :
     number = int(input("Enter the number \n"))
     sum = 0

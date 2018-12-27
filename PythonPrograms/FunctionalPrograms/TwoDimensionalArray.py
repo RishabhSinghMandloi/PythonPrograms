@@ -1,3 +1,10 @@
+# @Purpose To read the multidimensioanl array from the user
+# @aurthor Rishabh Singh
+# @version  3.7
+# @since 26/12/2018
+
+
+
 from UtitlitiesMethod import Utility
 
 try:

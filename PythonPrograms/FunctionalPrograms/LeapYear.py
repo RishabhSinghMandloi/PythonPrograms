@@ -1,3 +1,9 @@
+# @Purpose To check weather the year is leap year or not
+# @aurthor Rishabh Singh
+# @version  3.7
+# @since 26/12/2018
+
+
 from UtitlitiesMethod import Utility
 
 try :
