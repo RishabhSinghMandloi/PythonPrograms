@@ -112,10 +112,10 @@ def gambler(stack, goal, bet):
     return win
 
 
-# In this method we calucate the percentage
-## @param win
-## @param loss
-## @param turns
+# In this method we calculate the percentage
+# @param win
+# @param loss
+# @param turns
 
 
 def calulatePercentage(win, loss, turns):
@@ -451,7 +451,7 @@ def integerList():
     for i in range(n):
         x = int(input("Enter values"))
         listArr.append(x)
-    return listArr
+    print(listArr)
 
 
 ## this method is used to take the String type input in  the list
@@ -501,10 +501,81 @@ def monthlyPayment(p, y, r):
     print("Mothly payment is ", pay)
 
 
-## to determine the temprature in farahnite as well as in celsius
+# to determine the temprature in farahnite as well as in celsius
 
 def tempratureConversion(celsius, farhanite):
     celsiusTemp = (farhanite - 32) * 5 // 9
     print("Teamprature in celsius :", celsiusTemp)
     farhaniteTemp = (celsius * 9 // 5) + 32
     print("Temprature in faheranite :", farhaniteTemp)
+
+
+
+# Method to return the minimum amount of note by the vending machine
+
+def vendingMachine(money , notes):
+    rem = 0
+    while(money > 0):
+        for i in range(0,len(notes) , 1):
+            if money >= notes[i]:
+                calNotes = money // notes[i]
+                rem = money % notes[i]
+                money = rem
+                total = int(calNotes)
+                print(notes[i]," Notes ----------> " , calNotes)
+        vendingMachine(money,notes) # recursive call
+        print("Total no of notes: " , total)
+
+# question to find your number method to computue the sqaure root of a non negative number
+
+def sqrt(num):
+    temp = num
+    #epsilion = 1e - 15
+    while math.fabs(temp - num / temp) > epsilion * temp :
+        temp = ((num / temp + temp ) / 2)
+    print("SquareRoot is : " , temp)
+
+# method to guess a number between 0 to n-1
+#  question to find your number
+
+def question(low , high):
+    if(high - low ) == 1:  # if range is equal
+        return low
+    mid = int(high + low)/2  # find middle value
+    print('Is your number less  than ' , mid , ' ? press 1 to yes or 0 to no :')
+    a = int(input())
+    if a == 1:
+        return question(low , mid) #recusive call for left half
+    elif a == 0:
+        return question(mid ,  high)  #recusive call  for right half
+    else :
+        print("Invalid input...")
+        return 0
+
+# method of mergesort
+
+def merge(left,right):
+    result = []
+    i,j = 0,0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result += left[i:]
+    result += right[j:]
+    return result
+
+
+def mergeSort(lst):
+    if(len(lst) <= 1):
+        return lst
+
+    mid = int(len(lst)/2)
+    left = mergeSort(lst[:mid])
+    right = mergeSort(lst[mid:])
+    return merge(left, right)             #using recursion
+
